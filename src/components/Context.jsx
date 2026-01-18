@@ -1,23 +1,28 @@
 export default function Context() {
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
+      className="artistic-section"
       aria-labelledby="context-heading"
     >
       <h2 
         id="context-heading"
-        className="sr-only"
+        className="text-4xl sm:text-5xl font-sans font-semibold mb-8 text-text-primary"
       >
-        Context
+        About
       </h2>
       
-      <div className="max-w-2xl">
-        <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-4">
-          I design and build web interfaces with a focus on clarity, iteration, and real-world usability.
-        </p>
-        <p className="text-sm sm:text-base text-text-secondary">
-          <span className="text-text-primary">Brandon Gundrum</span>
-        </p>
+      <div className="mt-8">
+        <div className="info-card">
+          <p className="text-lg sm:text-xl text-text-secondary/90 leading-relaxed mb-6">
+            I design and build web interfaces with a focus on clarity, iteration, and real-world usability.
+          </p>
+          <div className="pt-4 border-t border-accent/20">
+            <p className="text-base text-text-secondary/60 uppercase tracking-wider text-xs mb-2">Designer & Developer</p>
+            <p className="text-2xl sm:text-3xl font-sans font-semibold text-text-primary">
+              Brandon Gundrum
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )

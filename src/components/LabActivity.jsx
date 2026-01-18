@@ -7,26 +7,29 @@ export default function LabActivity() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
+      className="artistic-section"
       aria-labelledby="lab-activity-heading"
     >
       <h2 
         id="lab-activity-heading"
-        className="text-2xl sm:text-3xl font-serif font-normal mb-8 text-text-primary"
+        className="text-4xl sm:text-5xl font-sans font-semibold mb-8 text-text-primary"
       >
         Lab
       </h2>
       
-      <ul className="space-y-3" role="list">
+      <div className="mt-8 space-y-3">
         {experiments.map((experiment, index) => (
-          <li 
+          <div 
             key={index}
-            className="text-sm sm:text-base text-text-secondary"
+            className="info-card"
           >
-            {experiment}
-          </li>
+            <div className="flex items-center gap-3">
+              <span className="text-accent text-lg" aria-hidden="true">⚗</span>
+              <span className="text-text-secondary/90 text-base">{experiment}</span>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

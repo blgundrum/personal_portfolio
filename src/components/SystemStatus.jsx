@@ -5,35 +5,35 @@ export default function SystemStatus() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
+      className="artistic-section"
       aria-labelledby="system-status-heading"
     >
-      <header className="mb-6">
+      <header className="mb-8">
         <h1 
           id="system-status-heading"
-          className="text-3xl sm:text-4xl lg:text-5xl font-serif font-normal mb-2 text-text-primary"
+          className="text-4xl sm:text-5xl lg:text-6xl font-sans font-semibold mb-3 text-text-primary"
         >
           System Status
         </h1>
-        <p className="text-sm text-text-secondary">
+        <p className="text-sm sm:text-base text-text-secondary/80">
           A living record of design and development work
         </p>
       </header>
       
-      <div className="space-y-3 text-sm sm:text-base">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-          <span className="text-text-secondary">Active projects:</span>
-          <span className="text-text-primary font-medium">{activeProjects}</span>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+        <div className="info-card">
+          <div className="info-card-title">Active Projects</div>
+          <div className="info-card-value">{activeProjects}</div>
         </div>
         
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-          <span className="text-text-secondary">Last update:</span>
-          <span className="text-text-primary font-medium">{lastUpdateDays} {lastUpdateDays === 1 ? 'day' : 'days'} ago</span>
+        <div className="info-card">
+          <div className="info-card-title">Last Update</div>
+          <div className="info-card-value">{lastUpdateDays} {lastUpdateDays === 1 ? 'day' : 'days'}</div>
         </div>
         
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-          <span className="text-text-secondary">Current focus:</span>
-          <span className="text-text-primary font-medium">{currentFocus}</span>
+        <div className="info-card">
+          <div className="info-card-title">Current Focus</div>
+          <div className="info-card-value text-base sm:text-lg">{currentFocus}</div>
         </div>
       </div>
     </section>

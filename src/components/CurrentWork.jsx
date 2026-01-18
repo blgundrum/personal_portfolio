@@ -24,45 +24,48 @@ export default function CurrentWork() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
+      className="artistic-section"
       aria-labelledby="current-work-heading"
     >
       <h2 
         id="current-work-heading"
-        className="text-2xl sm:text-3xl font-serif font-normal mb-8 text-text-primary"
+        className="text-4xl sm:text-5xl font-sans font-semibold mb-8 text-text-primary"
       >
         Current Work
       </h2>
       
-      <ul className="space-y-6" role="list">
+      <div className="space-y-4 mt-8">
         {projects.map((project, index) => (
-          <li 
+          <div 
             key={index}
-            className="border-l-2 border-accent pl-4 sm:pl-6 py-2 hover:border-accent-hover transition-colors"
+            className="info-card group"
           >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex-1">
-                <h3 className="text-lg sm:text-xl font-medium text-text-primary mb-1">
+                <h3 className="text-xl sm:text-2xl font-sans font-semibold text-text-primary mb-3">
                   {project.title}
                 </h3>
-                <div className="flex flex-wrap items-center gap-3 text-sm text-text-secondary">
-                  <span>Status: <StatusBadge status={project.status} /></span>
-                  <span className="hidden sm:inline">•</span>
-                  <span>Last change: {project.lastChange}</span>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
+                  <span className="flex items-center gap-2">
+                    <span className="text-text-secondary/60">Status:</span>
+                    <StatusBadge status={project.status} />
+                  </span>
+                  <span className="hidden sm:inline text-text-secondary/40">•</span>
+                  <span className="text-text-secondary/80">Last change: {project.lastChange}</span>
                 </div>
               </div>
               <a
                 href={project.link}
-                className="text-sm text-accent hover:text-accent-hover focus-visible-ring inline-flex items-center gap-1 mt-2 sm:mt-0"
+                className="text-sm font-medium text-accent hover:text-accent-hover focus-visible-ring inline-flex items-center gap-2 mt-2 sm:mt-0 px-4 py-2 rounded-lg border border-accent/20 hover:border-accent/40 transition-all"
                 aria-label={`View case study for ${project.title}`}
               >
                 View Case Study
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

@@ -9,27 +9,27 @@ export default function RecentChanges() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
+      className="artistic-section"
       aria-labelledby="recent-changes-heading"
     >
       <h2 
         id="recent-changes-heading"
-        className="text-2xl sm:text-3xl font-serif font-normal mb-8 text-text-primary"
+        className="text-4xl sm:text-5xl font-sans font-semibold mb-8 text-text-primary"
       >
         Changelog
       </h2>
       
-      <ul className="space-y-3" role="list">
+      <div className="mt-8 space-y-3">
         {changes.map((change, index) => (
-          <li 
+          <div 
             key={index}
-            className="flex items-start gap-3 text-sm sm:text-base"
+            className="info-card flex items-start gap-4 group"
           >
-            <span className="text-accent mt-1" aria-hidden="true">+</span>
-            <span className="text-text-secondary">{change}</span>
-          </li>
+            <span className="text-accent mt-1 font-semibold text-lg" aria-hidden="true">+</span>
+            <span className="text-text-secondary/90 text-base flex-1">{change}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }

@@ -5,28 +5,58 @@ import CurrentWork from './components/CurrentWork'
 import RecentChanges from './components/RecentChanges'
 import LabActivity from './components/LabActivity'
 import Context from './components/Context'
+import SectionNavigator from './components/SectionNavigator'
+import SectionWrapper from './components/SectionWrapper'
 import { useKeyboardNavigation } from './hooks/useKeyboardNavigation'
-import { useScrollObserver } from './hooks/useScrollObserver'
 
 function App() {
   useKeyboardNavigation()
-  useScrollObserver()
   
-  const [mounted, setMounted] = useState(false)
+  const [currentSection, setCurrentSection] = useState(0)
+  
+  const sections = [
+    { id: 'status', label: 'Status', component: SystemStatus },
+    { id: 'work', label: 'Work', component: CurrentWork },
+    { id: 'changes', label: 'Changes', component: RecentChanges },
+    { id: 'lab', label: 'Lab', component: LabActivity },
+    { id: 'context', label: 'About', component: Context },
+  ]
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        setCurrentSection((prev) => (prev + 1) % sections.length)
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        setCurrentSection((prev) => (prev - 1 + sections.length) % sections.length)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [sections.length])
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-hidden">
       <StarsBackground />
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-6xl">
-        <SystemStatus />
-        <CurrentWork />
-        <RecentChanges />
-        <LabActivity />
-        <Context />
+      <SectionNavigator 
+        sections={sections} 
+        currentSection={currentSection} 
+        onSectionChange={setCurrentSection}
+      />
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 max-w-5xl min-h-screen flex items-center justify-center">
+        <div className="relative w-full max-w-4xl">
+          {sections.map((section, index) => {
+            const Component = section.component
+            return (
+              <SectionWrapper 
+                key={section.id}
+                isActive={currentSection === index}
+              >
+                <Component />
+              </SectionWrapper>
+            )
+          })}
+        </div>
       </div>
     </main>
   )
