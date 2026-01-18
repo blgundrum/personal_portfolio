@@ -7,7 +7,7 @@ export default function LabActivity() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
       aria-labelledby="lab-activity-heading"
     >
       <h2 

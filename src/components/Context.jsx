@@ -1,7 +1,7 @@
 export default function Context() {
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
       aria-labelledby="context-heading"
     >
       <h2 
@@ -16,7 +16,7 @@ export default function Context() {
           I design and build web interfaces with a focus on clarity, iteration, and real-world usability.
         </p>
         <p className="text-sm sm:text-base text-text-secondary">
-          <span className="text-text-primary">Ben Gundrum</span>
+          <span className="text-text-primary">Brandon Gundrum</span>
         </p>
       </div>
     </section>

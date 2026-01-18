@@ -6,9 +6,11 @@ import RecentChanges from './components/RecentChanges'
 import LabActivity from './components/LabActivity'
 import Context from './components/Context'
 import { useKeyboardNavigation } from './hooks/useKeyboardNavigation'
+import { useScrollObserver } from './hooks/useScrollObserver'
 
 function App() {
   useKeyboardNavigation()
+  useScrollObserver()
   
   const [mounted, setMounted] = useState(false)
 

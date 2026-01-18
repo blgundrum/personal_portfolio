@@ -37,3 +37,25 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Scroll animations */
+.scroll-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-section:first-of-type {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-section.animate-out {
+  opacity: 0;
+  transform: translateY(30px);
+}

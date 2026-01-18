@@ -5,7 +5,7 @@ export default function SystemStatus() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
       aria-labelledby="system-status-heading"
     >
       <header className="mb-6">

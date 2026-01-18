@@ -9,7 +9,7 @@ export default function RecentChanges() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
       aria-labelledby="recent-changes-heading"
     >
       <h2 

@@ -1,3 +1,5 @@
+import StatusBadge from './StatusBadge'
+
 export default function CurrentWork() {
   const projects = [
     {
@@ -22,7 +24,7 @@ export default function CurrentWork() {
 
   return (
     <section 
-      className="mb-16 sm:mb-20 lg:mb-24"
+      className="mb-16 sm:mb-20 lg:mb-24 scroll-section"
       aria-labelledby="current-work-heading"
     >
       <h2 
@@ -44,7 +46,7 @@ export default function CurrentWork() {
                   {project.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-3 text-sm text-text-secondary">
-                  <span>Status: <span className="text-text-primary">{project.status}</span></span>
+                  <span>Status: <StatusBadge status={project.status} /></span>
                   <span className="hidden sm:inline">•</span>
                   <span>Last change: {project.lastChange}</span>
                 </div>
