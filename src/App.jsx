@@ -43,8 +43,8 @@ function App() {
         currentSection={currentSection} 
         onSectionChange={setCurrentSection}
       />
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 max-w-5xl min-h-screen flex items-center justify-center">
-        <div className="relative w-full max-w-4xl">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 max-w-5xl min-h-screen flex items-start justify-center pt-16 sm:pt-20">
+          <div className="relative w-full max-w-4xl mt-8 sm:mt-12">
           {sections.map((section, index) => {
             const Component = section.component
             return (

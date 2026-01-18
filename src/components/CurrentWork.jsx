@@ -24,7 +24,7 @@ export default function CurrentWork() {
 
   return (
     <section 
-      className="artistic-section"
+      className="artistic-section no-hover"
       aria-labelledby="current-work-heading"
     >
       <h2 

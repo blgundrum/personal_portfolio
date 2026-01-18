@@ -5,7 +5,7 @@ export default function SystemStatus() {
 
   return (
     <section 
-      className="artistic-section"
+      className="artistic-section no-hover"
       aria-labelledby="system-status-heading"
     >
       <header className="mb-8">

@@ -9,7 +9,7 @@ export default function RecentChanges() {
 
   return (
     <section 
-      className="artistic-section"
+      className="artistic-section no-hover"
       aria-labelledby="recent-changes-heading"
     >
       <h2 

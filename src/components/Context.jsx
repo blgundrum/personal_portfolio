@@ -1,7 +1,7 @@
 export default function Context() {
   return (
     <section 
-      className="artistic-section"
+      className="artistic-section no-hover"
       aria-labelledby="context-heading"
     >
       <h2 

@@ -7,7 +7,7 @@ export default function LabActivity() {
 
   return (
     <section 
-      className="artistic-section"
+      className="artistic-section no-hover"
       aria-labelledby="lab-activity-heading"
     >
       <h2 
